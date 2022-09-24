@@ -1,5 +1,6 @@
 class CannonBall {
-  constructor(x, y) {
+  constructor(x, y) 
+  {
     var options = {
       isStatic: true
     };
@@ -8,20 +9,19 @@ class CannonBall {
     this.image = loadImage("./assets/cannonball.png");
     World.add(world, this.body);
   }
+
   shoot() {
     var newAngle = cannon.angle - 28;
-    //cunvorting new angle into radions unit
-    newAngle = newAngle * (3.14 / 180);
+    newAngle = newAngle *(3.14/180)
     var velocity = p5.Vector.fromAngle(newAngle);
     velocity.mult(0.5);
     Matter.Body.setStatic(this.body, false);
     Matter.Body.setVelocity(this.body, {
-      x: velocity.x * (180 / 3.14),
-      y: velocity.y * (180 / 3.14)
-    })
+      x: velocity.x *(180/3.14), y: velocity.y * (180/3.14)});
   }
 
-  display() {
+  display() 
+  {
     var pos = this.body.position;
     push();
     imageMode(CENTER);

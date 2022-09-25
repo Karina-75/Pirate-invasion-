@@ -80,7 +80,7 @@ function showBoats() {
     if (boats[boats.length - 1].body.position.x < width - 300) {
       var positions = [-40, -60, -70, -20];
       var position = random(positions);
-      var boat = new Boat(width, height, -100, 170, 170, position);
+      var boat = new Boat(width, height -100, 170, 170, position);
       boats.push(boat);
     }
     for (var index = 0; index < boats.length; index = index + 1) {
